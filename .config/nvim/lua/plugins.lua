@@ -22,10 +22,16 @@ return require('packer').startup(function(use)
 	use 'scrooloose/nerdtree'
 	
 	-- UI Plugins
-	use 'vim-airline/vim-airline'
-	use 'vim-airline/vim-airline-themes'
 	use 'bling/vim-bufferline'
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+	}
 	use 'altercation/vim-colors-solarized'
+	use 'RRethy/nvim-base16'
+	use ({ 'projekt0n/github-nvim-theme' })
+	use { "catppuccin/nvim", as = "catppuccin" }
+	use 'ryanoasis/vim-devicons'
 
 	-- Editor Plugins
 	use 'Raimondi/delimitMate'
