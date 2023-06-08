@@ -51,32 +51,11 @@ fi
 
 xrandr --output HDMI-1 --auto --right-of eDP-1 &
 xsetwacom --set "HUION Huion Tablet_GS1331 stylus" MapToOutput HEAD-1
+session=${1}
 
-DEFAULT_SESSION=i3
-
-get_session(){
-	local dbus_args=(--sh-syntax --exit-with-session)
-	case $1 in
-		awesome) dbus_args+=(awesome) ;;
-		bspwm) dbus_args+=(bspwm-session) ;;
-		budgie) dbus_args+=(budgie-desktop) ;;
-		cinnamon) dbus_args+=(cinnamon-session) ;;
-		deepin) dbus_args+=(startdde) ;;
-		enlightenment) dbus_args+=(enlightenment_start) ;;
-		fluxbox) dbus_args+=(startfluxbox) ;;
-		gnome) dbus_args+=(gnome-session) ;;
-		i3|i3wm) dbus_args+=(i3 --shmlog-size 0) ;;
-		jwm) dbus_args+=(jwm) ;;
-		kde) dbus_args+=(startkde) ;;
-		lxde) dbus_args+=(startlxde) ;;
-		lxqt) dbus_args+=(lxqt-session) ;;
-		mate) dbus_args+=(mate-session) ;;
-		xfce) dbus_args+=(xfce4-session) ;;
-		openbox) dbus_args+=(openbox-session) ;;
-		*) dbus_args+=($DEFAULT_SESSION) ;;
-	esac
-
-	echo "dbus-launch ${dbus_args[*]}"
-}
-
-exec $(get_session)
+case $session in
+    gnome)  export XDG_SESSION_TYPE=x11
+            export GDK_BACKEND=x11
+            exec gnome-session ;;
+    i3|i3wm) dbus-launch --sh-syntax --exit-with-session i3 --shmlog-size 0;;
+esac
