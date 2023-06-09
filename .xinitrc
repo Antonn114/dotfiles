@@ -58,4 +58,6 @@ case $session in
             export GDK_BACKEND=x11
             exec gnome-session ;;
     i3|i3wm) dbus-launch --sh-syntax --exit-with-session i3 --shmlog-size 0;;
+    xfce) exec startxfce4 ;;
+    *) dbus-launch --sh-syntax --exit-with-session i3 --shmlog-size 0;;
 esac

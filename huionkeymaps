@@ -10,4 +10,4 @@ xsetwacom set "HUION Huion Tablet_GS1331 Pad pad" Button 9 "key +ctrl - -ctrl"
 xsetwacom set "HUION Huion Tablet_GS1331 Pad pad" Button 10 "key m"
 
 # pen
-xsetwacom set "HUION Huion Tablet_GS1331 Stylus stylus" Button 2 "key e"
+xsetwacom set "HUION Huion Tablet_GS1331 stylus" Button 2 "key e"
