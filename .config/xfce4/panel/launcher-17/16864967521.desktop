@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Dev-C++
+Exec=env WINEPREFIX="/home/anton/.wine" wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\Bloodshed\\ Dev-C++\\\\Dev-C++.lnk
+Type=Application
+StartupNotify=true
+Path=/home/anton/.wine/dosdevices/c:/Program Files (x86)/Dev-Cpp/Lang
+Icon=7BB7_devcpp.0
+StartupWMClass=devcpp.exe
+X-XFCE-Source=file:///home/anton/.local/share/applications/wine/Programs/Bloodshed%20Dev-C++/Dev-C++.desktop
