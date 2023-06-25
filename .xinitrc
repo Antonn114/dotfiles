@@ -53,11 +53,13 @@ xrandr --output HDMI-1 --auto --right-of eDP-1 &
 xsetwacom --set "HUION Huion Tablet_GS1331 stylus" MapToOutput HEAD-1
 session=${1}
 
+export XDG_SESSION_TYPE=x11
+export GDK_BACKEND=x11
+
 case $session in
-    gnome)  export XDG_SESSION_TYPE=x11
-            export GDK_BACKEND=x11
-            exec gnome-session ;;
+    gnome) exec gnome-session ;;
     i3|i3wm) dbus-launch --sh-syntax --exit-with-session i3 --shmlog-size 0;;
     xfce) exec startxfce4 ;;
+    cinnamon) exec cinnamon-session ;;
     *) dbus-launch --sh-syntax --exit-with-session i3 --shmlog-size 0;;
 esac

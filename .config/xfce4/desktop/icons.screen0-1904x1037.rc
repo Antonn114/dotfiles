@@ -1,20 +1,12 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
-[/home/anton/Desktop/FL Studio 21.desktop]
-row=3
-col=0
-
-[/home/anton/Desktop/FL Studio 21.lnk]
-row=4
-col=0
-
-[/home/anton/Desktop/Themis - Chương trình chấm bài tự động.desktop]
-row=5
-col=0
-
-[/home/anton/Desktop/UltraViewer.desktop]
+[/home/anton/Desktop/code.desktop]
 row=2
+col=0
+
+[/home/anton/Desktop/sublime_text.desktop]
+row=3
 col=0
 
 [/]
