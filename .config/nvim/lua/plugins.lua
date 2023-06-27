@@ -1,73 +1,46 @@
-local ensure_packer = function()
-	local fn = vim.fn
-	local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-		vim.cmd [[packadd packer.nvim]]
-		return true
-	end
-	return false
-end
+-- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
-local packer_bootstrap = ensure_packer()
+-- Only required if you have packer configured as `opt`
+vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-	use 'wbthomason/packer.nvim'
-	-- My plugins here
-	-- use 'foo1/bar1.nvim'
-	-- use 'foo2/bar2.nvim'
-	
-	-- Navigation Plugins
-	use 'rbgrouleff/bclose.vim'
-	use 'scrooloose/nerdtree'
-	
-	-- UI Plugins
-	use 'bling/vim-bufferline'
-	use {
-		'nvim-lualine/lualine.nvim',
-		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-	}
-	use 'altercation/vim-colors-solarized'
-	use 'RRethy/nvim-base16'
-	use ({ 'projekt0n/github-nvim-theme' })
-	use { "catppuccin/nvim", as = "catppuccin" }
-	use 'ryanoasis/vim-devicons'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        -- or                            , branch = '0.1.x',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
+    use ('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+    use ('nvim-treesitter/playground')
+    use ('mbbill/undotree')
+    use ('tpope/vim-fugitive')
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},             -- Required
+            {                                      -- Optional
+                'williamboman/mason.nvim',
+                run = function()
+                    pcall(vim.cmd.MasonUpdate)
+                end,
+            },
+            {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
-	-- Editor Plugins
-	use 'Raimondi/delimitMate'
-	use 'scrooloose/nerdcommenter'
-	use 'tpope/vim-sleuth'
-	use 'airblade/vim-gitgutter'
-	use 'editorconfig/editorconfig-vim'
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},     -- Required
+            {'hrsh7th/cmp-nvim-lsp'}, -- Required
+            {'L3MON4D3/LuaSnip'},     -- Required
+        }
+    }
+    use ('ThePrimeagen/harpoon')
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
 
-	use 'junegunn/fzf'
-	use 'junegunn/fzf.vim'
 
-	use 'neovim/nvim-lspconfig'
-	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-	use 'nvim-treesitter/playground'
-	use 'hrsh7th/nvim-cmp'
-	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/cmp-path'
-	use 'hrsh7th/cmp-cmdline'
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'L3MON4D3/LuaSnip'
-	use 'saadparwaiz1/cmp_luasnip'
-	
-	use 'tpope/vim-fugitive'
-
-	use 'lervag/vimtex'
-	use 'vim-pandoc/vim-pandoc'
-	use 'Vimjas/vim-python-pep8-indent'
-	use 'maxmellon/vim-jsx-pretty'
-	use 'iden3/vim-circom-syntax'
-	use 'tmhedberg/SimpylFold'
-
-	use 'lukaszkorecki/workflowish'
-
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if packer_bootstrap then
-		require('packer').sync()
-	end
 end)
