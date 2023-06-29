@@ -6,7 +6,7 @@
   <property name="misc-single-click" type="bool" value="false"/>
   <property name="last-window-maximized" type="bool" value="false"/>
   <property name="last-separator-position" type="int" value="170"/>
-  <property name="last-window-width" type="int" value="910"/>
-  <property name="last-window-height" type="int" value="674"/>
+  <property name="last-window-width" type="int" value="636"/>
+  <property name="last-window-height" type="int" value="1036"/>
   <property name="misc-date-style" type="string" value="THUNAR_DATE_STYLE_SHORT"/>
 </channel>
