@@ -220,8 +220,11 @@ client.background        $base
 
 
 exec_always ~/.config/polybar/launch.sh &
-exec_always feh --bg-fill ~/WhiteSur-wallpapers/4k/WhiteSur.jpg
+exec_always feh --bg-fill ~/Pictures/cat_wallpaper.png & 
+exec_always picom --config ~/.picom.conf
 
+for_window [class="^.*"] border pixel 1
 
 gaps inner 7
 gaps outer 7
+

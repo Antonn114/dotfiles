@@ -10,5 +10,6 @@ alias oldvim="/usr/bin/vim"
 alias vim="/usr/bin/nvim"
 alias config='/usr/bin/git --git-dir=/home/anton/.cfg/ --work-tree=/home/anton'
 
-alias neof="neofetch --ascii_distro macos"
 starship init fish | source
+
+set fish_greeting
