@@ -1,7 +1,12 @@
 alias cls=clear
 
+alias rm='rm -i'
+alias cp='cp -i'
 alias mv='mv -i'
 alias e='vim'
+alias mkdir='mkdir -p'
+alias ..='cd ..'
+alias ...='cd ...'
 alias cls='clear'
 alias ko='konsole -e'
 alias st4='/opt/sublime_text/sublime_text'
