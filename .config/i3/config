@@ -50,7 +50,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -220,7 +220,8 @@ client.background        $base
 
 
 exec_always ~/.config/polybar/launch.sh &
-exec_always feh --bg-fill ~/Pictures/cat_wallpaper.png & 
+exec_always nitrogen --restore &
+# exec_always feh --bg-fill ~/Pictures/cat_wallpaper.png & 
 exec_always picom --config ~/.picom.conf
 
 for_window [class="^.*"] border pixel 1
