@@ -38,7 +38,7 @@ session=${1}
 
 export XDG_SESSION_TYPE=x11
 export GDK_BACKEND=x11
-
+exec xrdb ${userresources}
 case $session in
     gnome) exec gnome-session ;;
     i3|i3wm) dbus-launch --sh-syntax --exit-with-session i3 --shmlog-size 0;;
