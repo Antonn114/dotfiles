@@ -5,11 +5,17 @@
 my dotfiles for arch linux
 
 **DE:** *i3wm*
+
 **Bar:** *polybar*
+
 **Application launcher:** *rofi*
+
 **Terminal emulator:** *alacritty/kitty*
+
 **Shell:** *zsh/fish*
+
 **Wallpaper manager:** *nitrogen*
+
 **Theme switcher:** *LXAppearance*
 
 ## programs
