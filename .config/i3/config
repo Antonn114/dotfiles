@@ -245,6 +245,7 @@ exec_always nitrogen --restore &
 # exec_always feh --bg-fill ~/Pictures/cat_wallpaper.png &
 exec_always python ~/bin/i3unityfix.py &
 exec_always picom &
+exec_always xrdb ~/.Xresources
 
 for_window [class="^.*"] border pixel 1
 
