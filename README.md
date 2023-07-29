@@ -2,7 +2,9 @@
 
 ## general
 
-my dotfiles for arch linux
+my dotfiles for my arch linux machine
+
+![screenshot of my setup](dot-readme-assets/1.png)
 
 **DE:** *i3wm*
 
@@ -10,23 +12,18 @@ my dotfiles for arch linux
 
 **Application launcher:** *rofi*
 
-**Terminal emulator:** *alacritty/kitty*
+**Terminal emulator:** *alacritty*
 
-**Shell:** *zsh/fish*
+**Shell:** *zsh*
 
 **Wallpaper manager:** *nitrogen*
 
-**Theme switcher:** *LXAppearance*
+**Editor:** *nvim*
 
 ## programs
 
 install all the required programs with the following commands
 
 ```
-sudo pacman -S jq python i3-wm picom polybar rofi alacritty kitty zsh fish starship neofetch nitrogen
-yay -S ntfd-bin 
+sudo pacman -S python lua i3-wm picom polybar rofi alacritty zsh nvim neofetch nitrogen
 ```
-
-## todo
-
-make this repo easier to use

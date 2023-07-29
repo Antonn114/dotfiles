@@ -158,7 +158,6 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -241,14 +240,13 @@ client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
 client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
 client.urgent           $red $red $white $red $red
 
-exec_always ntfd &
 exec_always ~/.config/polybar/launch.sh &
 exec_always nitrogen --restore &
 # exec_always feh --bg-fill ~/Pictures/cat_wallpaper.png &
 exec_always python ~/bin/i3unityfix.py &
-exec_always picom --config ~/.picom.conf &
+exec_always picom &
 
 for_window [class="^.*"] border pixel 1
 
-gaps inner 16
-gaps outer 0
+gaps inner 8
+gaps outer 5
