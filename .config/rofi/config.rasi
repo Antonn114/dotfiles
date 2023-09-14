@@ -1,0 +1,62 @@
+configuration {
+    display-drun: "run app:";
+    modi: "window,run,drun";
+    font: "cozettehidpi 13";
+    show-icons: true;
+    icon-theme: "Papirus";
+    drun-display-format: "{icon} {name}";
+}
+@theme "/dev/null" 
+
+* {
+    bg2: #C0BFC0;
+    bg: #FFFFFF;
+    fg: #000000;
+}
+
+element {
+    padding: 4 16;
+    text-color: @fg;
+    background-color: @bg;
+}
+
+element-text {
+    text-color: inherit;
+    background-color: inherit;
+}
+
+element-icon {
+    size: 16;
+    padding: 0 10 0 0;
+    background-color: inherit;
+}
+
+entry {
+    padding: 4 ;
+    text-color: @fg;
+    background-color: inherit;
+}
+
+prompt {
+    enabled: true;
+    padding: 4 0 0 4;
+    text-color: @fg;
+    background-color: @bg2;
+}
+
+listview {
+    columns: 1;
+    lines: 16;
+    background-color: @bg;
+}
+
+inputbar {
+    children: [prompt, entry];
+    padding: 2 10;
+    background-color: @bg2;
+}
+
+mainbox {
+    children: [inputbar, listview];
+}
+
