@@ -188,6 +188,8 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always ~/.fehbg
 exec_always dunst
 
+bindsym $mod+shift+x exec betterlockscreen -l
+
 gaps inner 5
 gaps outer 8
 default_border pixel 1
