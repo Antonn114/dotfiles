@@ -186,6 +186,7 @@ bindsym $mod+r mode "resize"
 exec_always nitrogen --restore
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always ~/.fehbg
+exec_always dunst
 
 gaps inner 5
 gaps outer 8
