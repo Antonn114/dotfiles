@@ -20,4 +20,4 @@ Miscellaneous:
 
 Screenshots:
 
-![A screenshot of Anton's desktop in i3wm](scr.png "i3")
+![A screenshot of Anton's desktop in i3wm](screenshot.png "i3")
