@@ -6,6 +6,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+    use 'lervag/vimtex'
     use 'joshdick/onedark.vim'
     use 'tomasr/molokai'
     use { "catppuccin/nvim", as = "catppuccin" }
