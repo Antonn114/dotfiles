@@ -1,21 +1,21 @@
 configuration {
-    display-drun: "run app:";
+    display-drun: "run";
     modi: "window,run,drun";
     font: "cozettehidpi 13";
     show-icons: true;
-    icon-theme: "Papirus";
+    icon-theme: "Obsidian";
     drun-display-format: "{icon} {name}";
 }
 @theme "/dev/null" 
 
 * {
-    bg2: #C0BFC0;
-    bg: #FFFFFF;
-    fg: #000000;
+    bg2: #000000;
+    bg: #000000;
+    fg: #FFFFFF;
 }
 
 element {
-    padding: 4 16;
+    padding: 2 16;
     text-color: @fg;
     background-color: @bg;
 }
@@ -26,8 +26,8 @@ element-text {
 }
 
 element-icon {
-    size: 16;
-    padding: 0 10 0 0;
+    size: 20;
+    padding: 0 4 0 0;
     background-color: inherit;
 }
 
@@ -46,7 +46,6 @@ prompt {
 
 listview {
     columns: 1;
-    lines: 16;
     background-color: @bg;
 }
 
@@ -59,4 +58,11 @@ inputbar {
 mainbox {
     children: [inputbar, listview];
 }
-
+window {
+  location: south west;
+  anchor: south west;
+  width : 18%;
+  children: [mainbox];
+  x-offset: 16px;
+  y-offset: -16px;
+}
