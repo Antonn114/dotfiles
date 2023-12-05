@@ -1,7 +1,7 @@
 configuration {
-    display-drun: "run";
+    display-drun: " run ";
     modi: "window,run,drun";
-    font: "cozettehidpi 13";
+    font: "cozettehidpi 18";
     show-icons: true;
     icon-theme: "Obsidian";
     drun-display-format: "{icon} {name}";
@@ -12,6 +12,7 @@ configuration {
     bg2: #000000;
     bg: #000000;
     fg: #FFFFFF;
+    fg-selected: #FF5522;
 }
 
 element {
@@ -20,13 +21,17 @@ element {
     background-color: @bg;
 }
 
+element selected{
+  text-color: @fg-selected;
+}
+
 element-text {
     text-color: inherit;
     background-color: inherit;
 }
 
 element-icon {
-    size: 20;
+    size: 32;
     padding: 0 4 0 0;
     background-color: inherit;
 }
@@ -47,6 +52,7 @@ prompt {
 listview {
     columns: 1;
     background-color: @bg;
+    padding: 8 0;
 }
 
 inputbar {
@@ -59,10 +65,11 @@ mainbox {
     children: [inputbar, listview];
 }
 window {
-  location: south west;
-  anchor: south west;
-  width : 18%;
+  location: north west;
+  anchor: north west;
+  width : 22%;
   children: [mainbox];
+  orientation: horizontal;
   x-offset: 16px;
-  y-offset: -16px;
+  y-offset: 48px;
 }
